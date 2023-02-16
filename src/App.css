@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header Style Start */
+header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  height: 35px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
+.next-logo {
+  vertical-align: middle;
+  height: 20px;
 }
+.search-tunes {
+  width: 35%;
+  box-shadow: none !important;
+  border: 1px solid #ccc;
+  border-radius: 30px !important;
+}
+.search-tunes .css-piqts5-MuiInputBase-root{
+  width: 87%;
+}
+#search-input{
+  font-size: 15px;
+  padding: 6px 5px;
+}
+#search-button{
+  padding: 0 10px;
+}
+#search-button:hover{
+  background: none;
+}
+/* Header Style End */
+/* Search Result UI Style Start */
+.search-wrapper{
+  padding: 30px 20px;
+}
+.result-title{
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.result-title span{
+  font-weight: 600;
+}
+/* Search Result UI Style End */
+/* Card Style Start */
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card{
+  width: 47%;
+  margin-bottom: 20px;
+}
+.bold-font{
+  font-weight: 600 !important;
+}
+/* Card Style End */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 768px){
+  .card{
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  header{
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .next-logo {
+      vertical-align: middle;
+      height: 20px;
+      order: 1;
+  }
+  .search-tunes{
+      order: 3;
+      width: 100%;
+      margin-top: 20px;
+  }
+  header svg{
+      order: 2;
+  }
+  .search-tunes .css-piqts5-MuiInputBase-root{
+      width: 81%;
   }
 }

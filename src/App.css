@@ -22,7 +22,7 @@ header {
   border: 1px solid #ccc;
   border-radius: 30px !important;
 }
-.search-tunes .css-piqts5-MuiInputBase-root{
+.search-tunes div{
   width: 87%;
 }
 #search-input{
@@ -85,7 +85,7 @@ header {
   header svg{
       order: 2;
   }
-  .search-tunes .css-piqts5-MuiInputBase-root{
+  .search-tunes div{
       width: 81%;
   }
 }

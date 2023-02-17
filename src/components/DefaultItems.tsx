@@ -4,10 +4,10 @@ import { useState } from 'react';
 
 const DefaultItems = () => {
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState("BTS");
+  const defaultQuery = "BTS";
   
   const getInitialData = () => {
-    fetch(`https://itunes.apple.com/search?term=${query.split(' ').join('+')}`)
+    fetch(`https://itunes.apple.com/search?term=${defaultQuery.split(' ').join('+')}`)
     .then(response => response.json()).then(responsejson => {
       setData(responsejson.results);
     }).catch(e => {

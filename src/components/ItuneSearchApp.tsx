@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import SearchResult from "./SearchResult";
-import { useAppDispatch, useAppSelector } from "../store/store";
+import { useAppDispatch } from "../store/store";
 import { handleChange } from "../store/SearchSlice";
 /* eslint-disable */
 
@@ -18,15 +18,12 @@ const ItuneSearchApp = () => {
   const [status, setStaus] = useState("init");
   const [data, setData] = useState([]);
   const dispatch = useAppDispatch();
-  const itune = useAppSelector(state=>state.SearchTunes.SearchTunes);
-  let queryMap;
 
   const handleSearchClick = () =>{
     dispatch(handleChange({query: query.current}));
     fetch(`https://itunes.apple.com/search?term=${(query.current).split(' ').join('+')}`)
     .then(response => response.json()).then(responsejson => {
       setData(responsejson.results)
-      console.log(responsejson.resultCount);
       setStaus(responsejson.resultCount ? '' : 'No Content');
     }).catch(e => {
       console.log(e);

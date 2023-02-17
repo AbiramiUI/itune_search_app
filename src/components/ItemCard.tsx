@@ -9,7 +9,6 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const ItemCard = (props:any) => {
-    const[page, setPage] = useState(1);
     const fetchMoreData = () => {
         setTimeout(() => {
             props.data = props.data.concat(Array.from({ length: 10 }))

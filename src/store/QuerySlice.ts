@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface SearchTune{
     query: string
@@ -12,7 +12,7 @@ const initialState: SearchTunesState = {
     SearchTunes: []
 }
 
-export const SearchSlice = createSlice({
+export const QuerySlice = createSlice({
     name: "SearchTunes",
     initialState,
     reducers: {
@@ -24,5 +24,5 @@ export const SearchSlice = createSlice({
     }
 })
 
-export default SearchSlice.reducer;
-export const { handleChange } = SearchSlice.actions;
+export default QuerySlice.reducer;
+export const { handleChange } = QuerySlice.actions;

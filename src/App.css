@@ -88,4 +88,7 @@ header {
   .search-tunes div{
       width: 81%;
   }
+  .track-name{
+    font-size: 20px !important;
+  }
 }

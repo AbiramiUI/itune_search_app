@@ -1,23 +1,21 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import ItemCard from "./ItemCard";
 import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from "../store/store";
+import { fetchData } from "../store/DataSlice";
 
 const DefaultItems = () => {
-  const [data, setData] = useState([]);
   const defaultQuery = "BTS";
-  
-  const getInitialData = () => {
-    fetch(`https://itunes.apple.com/search?term=${defaultQuery.split(' ').join('+')}`)
-    .then(response => response.json()).then(responsejson => {
-      setData(responsejson.results);
-    }).catch(e => {
-      console.log(e);
-    })
-  }
-  getInitialData();
+  const dispatch = useAppDispatch();
+  const data = useAppSelector((state) => state.iTuneDataReducer.iTuneData);
 
+  useEffect(() => {
+    dispatch(fetchData(defaultQuery));
+  },[]);
+  
   return(
     <ItemCard data = {data}/>
   )
-  }
-  export default DefaultItems;
+}
+
+export default DefaultItems;

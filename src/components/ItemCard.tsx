@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -22,34 +22,34 @@ const ItemCard = (props:any) => {
             next={fetchMoreData}
             hasMore={true}
             loader={undefined} 
-            >
-                {props.data.map((index: any) => (
-                    <Card className="card" sx={{ display: 'flex' }}>
-                        <CardMedia
-                            component="img"
-                            sx={{ width: 150 }}
-                            image={index.artworkUrl100}
-                            alt="Live from space album cover"
-                        />
-                        <Box className="content" sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <CardContent sx={{ flex: '1 0 auto' }}>
-                                <Typography className="bold-font" component="div" variant="h5">
-                                    {index.collectionCensoredName}
-                                </Typography>
-                                <Typography variant="subtitle1" color="text.secondary" component="div">
-                                    {index.artistName}
-                                </Typography>
-                            </CardContent>
-                            <Box className="content" sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-                                <IconButton aria-label="play/pause" onClick={() => window.open(index.trackViewUrl)}>
-                                    <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-                                </IconButton>
-                            </Box>
+        >
+            {props.data.map((index: any) => (
+                <Card className="card" sx={{ display: 'flex' }}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 150 }}
+                        image={index.artworkUrl100}
+                        alt="Live from space album cover"
+                    />
+                    <Box className="content" sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <CardContent sx={{ flex: '1 0 auto' }}>
+                            <Typography className="bold-font track-name" component="div" variant="h5">
+                                {index.collectionCensoredName}
+                            </Typography>
+                            <Typography variant="subtitle1" color="text.secondary" component="div">
+                                {index.artistName}
+                            </Typography>
+                        </CardContent>
+                        <Box className="content" sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+                            <IconButton aria-label="play/pause" onClick={() => window.open(index.trackViewUrl)}>
+                                <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+                            </IconButton>
                         </Box>
-                    </Card>
-                ))}
+                    </Box>
+                </Card>
+            ))}
         </InfiniteScroll>
     )
 }
   
-  export default ItemCard;
+export default ItemCard;

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface MyKnownError {
     errorMessage: string
@@ -25,7 +25,6 @@ export const fetchData = createAsyncThunk(
         // Return the known error for future handling
         return thunkAPI.rejectWithValue((await response.json()) as MyKnownError)
       }
-      console.log(data.results);
       return await data.results;
     },
   );
@@ -37,7 +36,6 @@ export const DataSlice = createSlice({
     extraReducers: (builder) => {
       builder.addCase(fetchData.fulfilled, (state, action) => {
         state.iTuneData = action.payload;
-        console.log(state.iTuneData);
       });
       builder.addCase(fetchData.rejected, (state, action) => {
         alert(action.error);

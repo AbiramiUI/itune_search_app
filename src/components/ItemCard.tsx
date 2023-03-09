@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,27 +9,30 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const ItemCard = (props:any) => {
+    const[count, setCount] = useState(10); // initial count to show initial items
+    let keyValue = 0;
     const fetchMoreData = () => {
         setTimeout(() => {
-            props.data = props.data.concat(Array.from({ length: 10 }))
+            setCount(count + 10);
         }, 500);
-      };
+    };
 
     return (
         <InfiniteScroll
             className="card-wrapper"
-            dataLength={props.data.length}
+            dataLength={count}
             next={fetchMoreData}
             hasMore={true}
             loader={undefined} 
         >
-            {props.data.map((index: any) => (
-                <Card className="card" sx={{ display: 'flex' }}>
+            {props.data.slice(0, count).map((index: any) => (
+                <Card className="card" sx={{ display: 'flex' }} key={keyValue += 1}>
                     <CardMedia
                         component="img"
                         sx={{ width: 150 }}
                         image={index.artworkUrl100}
                         alt="Live from space album cover"
+                        className="card-image"
                     />
                     <Box className="content" sx={{ display: 'flex', flexDirection: 'column' }}>
                         <CardContent sx={{ flex: '1 0 auto' }}>

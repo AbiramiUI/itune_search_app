@@ -37,29 +37,29 @@ const ItuneSearchApp = () => {
   return(
     <div className="itune-wrapper">
       <header>
-          <img src={logo} className="next-logo" alt="logo" />
-          <Paper
-              component="form" className="search-tunes"
-            >
-              <InputBase id="search-input" 
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="Search artist, album or song"
-                inputProps={{ 'aria-label': 'Search artist, album or song' }}
-                onKeyDown={handleKeyPress}
-                onChange={e => query.current = e.target.value}
-                autoComplete = "off"
-              />
-              <IconButton 
-              id="search-button" 
-              type="button" 
-              sx={{ p: '10px' }} 
-              aria-label="search" 
-              onClick={handleSearchClick}
-              >
-                <SearchIcon />
-              </IconButton>
-            </Paper >
-            <MusicNoteIcon />
+        <img src={logo} className="next-logo" alt="logo" />
+        <Paper
+          component="form" className="search-tunes"
+        >
+          <InputBase id="search-input" 
+            sx={{ ml: 1, flex: 1 }}
+            placeholder="Search artist, album or song"
+            inputProps={{ 'aria-label': 'Search artist, album or song' }}
+            onKeyDown={handleKeyPress}
+            onChange={e => query.current = e.target.value}
+            autoComplete = "off"
+          />
+          <IconButton 
+            id="search-button" 
+            type="button" 
+            sx={{ p: '10px' }} 
+            aria-label="search" 
+            onClick={handleSearchClick}
+          >
+            <SearchIcon />
+          </IconButton>
+        </Paper >
+        <MusicNoteIcon />
       </header>
       <SearchResult data={data} status={status} query={query.current}/>
     </div>

@@ -24,6 +24,7 @@ export const fetchData = createAsyncThunk(
       if (response.status === 400) {
         // Return the known error for future handling
         return thunkAPI.rejectWithValue((await response.json()) as MyKnownError)
+        console.log(thunkAPI.rejectWithValue((await response.json()) as MyKnownError));
       }
       return await data.results;
     },
@@ -38,7 +39,7 @@ export const DataSlice = createSlice({
         state.iTuneData = action.payload;
       });
       builder.addCase(fetchData.rejected, (state, action) => {
-        alert(action.error);
+        alert(action.error.message);
         state.iTuneData = []
       })
     }

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/itune_search_app/static/css/main.9965ad15.css",
+    "main.js": "/itune_search_app/static/js/main.e6936138.js",
+    "static/js/787.a77e2f39.chunk.js": "/itune_search_app/static/js/787.a77e2f39.chunk.js",
+    "static/media/logo.svg": "/itune_search_app/static/media/logo.c44951c063fd6376a99317e41fc86bd6.svg",
+    "index.html": "/itune_search_app/index.html",
+    "main.9965ad15.css.map": "/itune_search_app/static/css/main.9965ad15.css.map",
+    "main.e6936138.js.map": "/itune_search_app/static/js/main.e6936138.js.map",
+    "787.a77e2f39.chunk.js.map": "/itune_search_app/static/js/787.a77e2f39.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9965ad15.css",
+    "static/js/main.e6936138.js"
+  ]
+}

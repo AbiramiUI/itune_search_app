@@ -68,6 +68,11 @@ header {
 .bold-font{
   font-weight: 600 !important;
 }
+#error-message{
+  color: red;
+  text-align: center;
+  padding-top: 40px;
+}
 /* Card Style End */
 
 @media only screen and (min-width: 1440px) {

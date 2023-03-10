@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultResult from "./DefaultResult";
 import ItemCard from "./ItemCard";
 
@@ -9,16 +9,19 @@ interface Props {
 }
 
 const SearchResult:React.FC<Props> = ({data, status, query}) => {
+  let show: boolean = false;
 
   if(status === "Clicked"){
     if(data.length !== 0){
       status = "";
+      show = false;
     }else{
       status = 'No Content';
     }
   }
+
   if(status === 'No Content'){
-    alert("There are no results found");
+    show = true;
   }
   
   return(
@@ -30,6 +33,7 @@ const SearchResult:React.FC<Props> = ({data, status, query}) => {
           <ItemCard data = {data}/>
         </div>)
         }
+        {show ? <div id="error-message">There are no results found!</div> : null }
     </div>
   )
 }

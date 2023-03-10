@@ -2,7 +2,7 @@
   "name": "next-itune-search",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://AbiramiUI.github.io/itune-search-app",
+  "homepage": "http://AbiramiUI.github.io/itune-search-fe",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

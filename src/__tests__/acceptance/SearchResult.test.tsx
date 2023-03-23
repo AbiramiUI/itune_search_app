@@ -19,7 +19,7 @@ test('Should return searched data', () => {
     const searchButton = screen.getByTestId("search-button");
     fireEvent.change(searchText, { target: { value: 'Ed Sheeran' } });
     fireEvent.click(searchButton);
-    const SearchResultValue = screen.findByTestId(/Ed Sheeran/, {}, { timeout: 5000 });
+    const SearchResultValue = screen.findByText(/Ed Sheeran/, {}, { timeout: 5000 });
     waitFor(() => expect(SearchResultValue).toBeInTheDocument());
 })
 
@@ -31,6 +31,6 @@ test('should return "not found" on empty search', () => {
     const searchButton = screen.getByTestId("search-button");
     fireEvent.change(searchText, { target: { value: '' } });
     fireEvent.click(searchButton);
-    const SearchResultValue = screen.findByTestId(/There are no results found!/, {}, { timeout: 5000 });
+    const SearchResultValue = screen.findByText(/There are no results found!/, {}, { timeout: 5000 });
     waitFor(() => expect(SearchResultValue).toBeInTheDocument());
 })

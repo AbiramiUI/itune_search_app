@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/itune_search_app/static/css/main.de38e6bd.css",
-    "main.js": "/itune_search_app/static/js/main.a65e015c.js",
+    "main.css": "/itune_search_app/static/css/main.0453fc38.css",
+    "main.js": "/itune_search_app/static/js/main.a08d383c.js",
     "static/js/787.a77e2f39.chunk.js": "/itune_search_app/static/js/787.a77e2f39.chunk.js",
     "index.html": "/itune_search_app/index.html",
-    "main.de38e6bd.css.map": "/itune_search_app/static/css/main.de38e6bd.css.map",
-    "main.a65e015c.js.map": "/itune_search_app/static/js/main.a65e015c.js.map",
+    "main.0453fc38.css.map": "/itune_search_app/static/css/main.0453fc38.css.map",
+    "main.a08d383c.js.map": "/itune_search_app/static/js/main.a08d383c.js.map",
     "787.a77e2f39.chunk.js.map": "/itune_search_app/static/js/787.a77e2f39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de38e6bd.css",
-    "static/js/main.a65e015c.js"
+    "static/css/main.0453fc38.css",
+    "static/js/main.a08d383c.js"
   ]
 }

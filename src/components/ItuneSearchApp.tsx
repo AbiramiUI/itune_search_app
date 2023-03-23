@@ -1,16 +1,16 @@
 import React, { useRef, KeyboardEvent, useState } from "react";
-import logo from '../assets/images/logo.svg';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import SearchResult from "./SearchResult";
+import { SearchResult } from "./SearchResult";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { handleChange } from "../store/QuerySlice";
-import { fetchData } from "../store/DataSlice";
+import { fetchData } from "../features/services/DataSlice";
+import { display } from "@mui/system";
 
-const ItuneSearchApp = () => {
+export const ItuneSearchApp = () => {
 
   const query = useRef<string>("");
   const [status, setStaus] = useState("init");
@@ -37,7 +37,7 @@ const ItuneSearchApp = () => {
   return(
     <div className="itune-wrapper">
       <header>
-        <img src={logo} className="next-logo" alt="logo" />
+        <img src={require("../assets/images/logo.jpg")} className="next-logo" alt="logo" />
         <Paper
           component="form" className="search-tunes"
         >
@@ -48,6 +48,7 @@ const ItuneSearchApp = () => {
             onKeyDown={handleKeyPress}
             onChange={e => query.current = e.target.value}
             autoComplete = "off"
+            data-testid="search-input"
           />
           <IconButton 
             id="search-button" 
@@ -55,6 +56,7 @@ const ItuneSearchApp = () => {
             sx={{ p: '10px' }} 
             aria-label="search" 
             onClick={handleSearchClick}
+            data-testid="search-button"
           >
             <SearchIcon />
           </IconButton>
@@ -66,5 +68,3 @@ const ItuneSearchApp = () => {
   )
   
 }
-
-export default ItuneSearchApp;

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const ItemCard = (props:any) => {
+export const ItemCard = (props:any) => {
     const[count, setCount] = useState(10); // initial count to show initial items
     let keyValue = 0;
     const fetchMoreData = () => {
@@ -31,7 +31,7 @@ const ItemCard = (props:any) => {
                         component="img"
                         sx={{ width: 150 }}
                         image={index.artworkUrl100}
-                        alt="Live from space album cover"
+                        alt={index.artistName}
                         className="card-image"
                     />
                     <Box className="content" sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -49,10 +49,9 @@ const ItemCard = (props:any) => {
                             </IconButton>
                         </Box>
                     </Box>
+                    <p>{index.artistName}</p>
                 </Card>
             ))}
         </InfiniteScroll>
     )
 }
-  
-export default ItemCard;

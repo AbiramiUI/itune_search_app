@@ -38,9 +38,7 @@ header {
 /* Header Style End */
 /* Search Result UI Style Start */
 .search-wrapper{
-  width: 1024px;
-  margin: auto;
-  padding: 30px 0px;
+  
   box-sizing: border-box;
 }
 .result-title{

@@ -1,21 +1,17 @@
 import React, { useEffect } from "react";
-import ItemCard from "./ItemCard";
-import { useState } from 'react';
+import { ItemCard } from "./ItemCard";
 import { useAppDispatch, useAppSelector } from "../store/store";
-import { fetchData } from "../store/DataSlice";
+import { fetchData } from "../features/services/DataSlice";
 
-const DefaultResult = () => {
-  const defaultQuery = "BTS";
+export const DefaultResult = () => {
   const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.iTuneDataReducer.iTuneData);
 
   useEffect(() => {
-    dispatch(fetchData(defaultQuery));
+    dispatch(fetchData("BTS"));
   },[]);
   
   return(
     <ItemCard data = {data}/>
   )
 }
-
-export default DefaultResult;

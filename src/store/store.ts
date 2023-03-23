@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import { QuerySlice } from "./QuerySlice";
-import { DataSlice } from "./DataSlice";
+import { DataSlice } from "../features/services/DataSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({

@@ -1,12 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export interface SearchTune{
-    query: string
-}
-
-interface SearchTunesState{
-    SearchTunes: SearchTune[]
-}
+import { SearchTunesState } from "../types/types";
 
 const initialState: SearchTunesState = {
     SearchTunes: []

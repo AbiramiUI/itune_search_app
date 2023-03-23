@@ -8,7 +8,6 @@ import { SearchResult } from "./SearchResult";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { handleChange } from "../store/QuerySlice";
 import { fetchData } from "../features/services/DataSlice";
-import { display } from "@mui/system";
 
 export const ItuneSearchApp = () => {
 

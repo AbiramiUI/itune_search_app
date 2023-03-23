@@ -49,7 +49,6 @@ export const ItemCard = (props:any) => {
                             </IconButton>
                         </Box>
                     </Box>
-                    <p>{index.artistName}</p>
                 </Card>
             ))}
         </InfiniteScroll>

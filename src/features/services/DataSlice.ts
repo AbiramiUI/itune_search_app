@@ -1,17 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { config } from "../../configuration/config";
-
-type MyKnownError = {
-    errorMessage: string
-}
-
-export type TuneData = {
-    data: []
-}
-
-type TuneDataState = {
-    iTuneData: TuneData[]
-}
+import { MyKnownError } from "../../types/types";
+import { TuneDataState } from "../../types/types";
 
 const initialState: TuneDataState = {
     iTuneData: []
